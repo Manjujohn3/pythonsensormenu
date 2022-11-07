@@ -32,7 +32,12 @@ while True:
             print(i) 
 
     elif(choice==3):
-        print("search selected")
+        print("search  selected")
+        date = input("enter the date: ")
+        sql = "SELECT `temperature`, `humidity`, `moisture`, `date` FROM `sensorvalue` WHERE `date` ='"+date+"'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
         
     elif(choice==4):
         break
